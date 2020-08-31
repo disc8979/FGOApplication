@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>メインメニュー</title>
+<title>このサイトについて</title>
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -16,10 +16,8 @@
 	<div class="col-sm-6">
 		<div class="grid">
 			<div class="leftbutton">
-				<a class="btn btn-primary"
-					href="/FGOApplication/auth/aboutThisSite.jsp">このサイトについて</a>
+				<a class="btn btn-primary" href="/FGOApplication/auth/home.jsp">メインメニューへ戻る</a>
 			</div>
-
 		</div>
 	</div>
 	<div class="col-sm-6">
@@ -31,24 +29,10 @@
 			</form>
 		</div>
 	</div>
-	<h1>メインメニュー</h1>
-	<div class="row">
-		<div class="col-sm-6">
-			<div class="grid">
-				<h2>課金履歴</h2>
-				<a href="/WebApp/HouseholdViewServlet"><img
-					src="/FGOApplication/basic/picture/お金を見つけたレジライ.jpg"
-					alt="お金を見つけたレジライ" width="70%" height="70%"></a>
-			</div>
-		</div>
-		<div class="col-sm-6">
-			<div class="grid">
-				<h2>課金する</h2>
-				<a href="/WebApp/AddHouseholdServlet"><img
-					src="/FGOApplication/basic/picture/課金をあざ笑うレジライ.jpg"
-					alt="課金をあざ笑うレジライ" width="70%" height="70%"></a>
-			</div>
-		</div>
-	</div>
+	<h1>このサイトについて</h1>
+	<p>このサイトは私、FGO8979が作成したジョークWebアプリケーションです。</p>
+	<p>このサイトではご自身の課金額を登録することで、レジライが課金額を教えてくれるようになっています。</p>
+	<p>当サイトでの課金額等のデータの紛失等においては責任を負いかねますのでご了承ください。（あくまでジョークサイトです）</p>
+	<p>また、このサイトにおいてのご質問・改善案等はTwitter（＠FGO8979）にて頂けると幸いです。</p>
 </body>
 </html>
