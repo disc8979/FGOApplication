@@ -1,0 +1,107 @@
+
+-- データベース作成
+drop database if exists webapp;
+create database webapp;
+use webapp;
+
+-- ユーザーテーブル作成
+drop table if exists M_user_info;
+create table M_user_info (
+user_id varchar(20) NOT NULL,
+password varchar(64) NOT NULL,
+primary key (user_id));
+
+-- ユーザーテーブルにauth権限のユーザーIDとパスワードを追加（ユーザーリスト画面への遷移に必要）
+insert into M_user_info (
+user_id,
+password
+)
+VALUES
+('auth',
+SHA2('auth', 256)
+);
+
+-- ユーザーテーブルにform権限のユーザーIDとパスワードを追加
+insert into M_user_info (
+user_id,
+password
+)
+VALUES
+('demouser',
+SHA2('pass', 256)
+);
+
+
+--ユーザーテーブルが作成されたかの確認
+select * from M_user_info;
+
+-- ロールテーブル作成
+drop table if exists M_role_info;
+create table M_role_info (
+user_id varchar(20) NOT NULL,
+role_name varchar(20) NOT NULL,
+primary key (user_id));
+
+-- ユーザーテーブルにauth権限のユーザーIDとパスワードを追加（ユーザーリスト画面への遷移に必要）
+insert into M_role_info (
+user_id,
+role_name
+)
+VALUES
+('auth',
+'auth'
+);
+
+-- ユーザーテーブルにform権限のユーザーIDとパスワードを追加
+insert into M_role_info (
+user_id,
+role_name
+)
+VALUES
+('demouser',
+'form'
+);
+
+--ロールテーブルが作成されたかの確認
+select * from M_role_info;
+
+-- 家計簿テーブル作成
+drop table if exists M_household_account_book_info;
+create table M_household_account_book_info (
+reg_id int(20) AUTO_INCREMENT,
+reg_date varchar(10) NOT NULL,
+category varchar(20) NOT NULL,
+category_of_income_balance int(20) NOT NULL,
+del_flag varchar(10) DEFAULT '1',
+primary key(reg_id), index(reg_id));
+
+-- 家計簿テーブルにデータ追加（一件目/カテゴリを英語/削除フラグ0（削除しない））
+insert into M_household_account_book_info (
+reg_id,
+reg_date,
+category,
+category_of_income_balance,
+del_flag
+)
+VALUES
+(1,
+'20200101',
+'test1',
+-10000,
+'0'
+);
+
+-- 家計簿テーブルにデータ追加（二件目/カテゴリを日本語/削除フラグ1（削除する））
+insert into M_household_account_book_info (
+reg_date,
+category,
+category_of_income_balance
+)
+VALUES
+('20200202',
+'テスト2',
++3000
+);
+
+--家計簿テーブルが作成されたかの確認（日本語・英語が反映されているかの確認）
+select * from M_household_account_book_info;

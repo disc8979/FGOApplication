@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+body {
+	padding: 30px;
+	background-color: whitesmoke;
+}
+
+h1 {
+	text-align: center;
+	border-bottom: solid 2px #008080;
+}
+
+h2 {
+	text-align: center;
+}
+
+div {
+	text-align: center;
+}
+
+.leftbutton {
+	text-align: left;
+}
+
+.rightbutton {
+	text-align: right
+}
